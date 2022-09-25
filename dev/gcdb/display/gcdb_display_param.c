@@ -280,7 +280,7 @@ static bool mdss_dsi_set_panel_node(char *panel_name, char **dsi_id,
 	return true;
 }
 
-bool gcdb_display_cmdline_arg(char *pbuf, uint16_t buf_size)
+int gcdb_display_cmdline_arg(char *pbuf, uint16_t buf_size)
 {
 	char *dsi_id = NULL;
 	char *panel_node = NULL;

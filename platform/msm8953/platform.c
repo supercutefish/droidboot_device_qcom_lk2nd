@@ -211,7 +211,7 @@ uint32_t platform_get_smem_base_addr()
 		return MSM_SHARED_BASE;
 }
 
-int platform_is_msm8953()
+bool platform_is_msm8953()
 {
 	uint32_t platform = board_platform_id();
 
