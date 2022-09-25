@@ -598,3 +598,21 @@ void display_image_on_screen(void)
 	display_default_image_on_screen();
 #endif
 }
+
+// © 2019 Mis012 - SPDX-License-Identifier: GPL-2.0+
+// from here till the end of file
+
+//gfx functions
+
+void fbcon_draw_pixel(unsigned int x, unsigned int y, uint32_t color) 
+{
+	if((x > (config->width - 1)) || (y > (config->height)))
+		return;
+
+	long location = x * (config->bpp/8) + y * config->width * (config->bpp/8);
+
+	/*BGR*/
+	*((uint8_t *)config->base + location + 0) = ((color >> 0) & 0xff);
+	*((uint8_t *)config->base + location + 1) = ((color >> 8)  & 0xff);
+	*((uint8_t *)config->base + location + 2) = ((color >> 16)  & 0xff);
+}

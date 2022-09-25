@@ -5,7 +5,7 @@ LOCAL_DIR := $(GET_LOCAL_DIR)
 OUTBOOTIMG := $(BUILDDIR)/lk2nd.img
 
 # Droidboot patch, include droidboot_gui to build
-DROIDBOOT_PLATFORM=msm8953-lk2nd
+DROIDBOOT_PLATFORM=qcom
 MODULES += app/droidboot_gui
 
 # Enable fastboot display menu
