@@ -4,6 +4,10 @@ LOCAL_DIR := $(GET_LOCAL_DIR)
 
 OUTBOOTIMG := $(BUILDDIR)/lk2nd.img
 
+# Droidboot patch, include droidboot_gui to build
+DROIDBOOT_PLATFORM=qcom
+MODULES += app/droidboot_gui
+
 # Enable fastboot display menu
 ENABLE_FBCON_DISPLAY_MSG := 1
 DISABLE_CRYPTO := 1

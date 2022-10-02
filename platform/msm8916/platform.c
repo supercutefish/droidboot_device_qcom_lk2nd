@@ -71,8 +71,8 @@ static mmu_section_t mmu_section_table[] = {
 };
 
 
-int platform_is_msm8939();
-int platform_is_msm8929();
+bool platform_is_msm8939();
+bool platform_is_msm8929();
 
 void platform_early_init(void)
 {
@@ -173,7 +173,7 @@ addr_t platform_get_phys_to_virt_mapping(addr_t phys_addr)
 	return phys_addr;
 }
 
-int platform_is_msm8939()
+bool platform_is_msm8939()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -196,7 +196,7 @@ int platform_is_msm8939()
 	return ret;
 }
 
-int platform_is_msm8929()
+bool platform_is_msm8929()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -216,7 +216,7 @@ int platform_is_msm8929()
 	return ret;
 }
 
-int platform_is_apq8016()
+bool platform_is_apq8016()
 {
 	return board_platform_id() == APQ8016 ? 1 : 0;
 }
