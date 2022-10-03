@@ -202,7 +202,7 @@ uint32_t platform_get_max_periph()
 	return 256;
 }
 
-int platform_is_msm8917()
+bool platform_is_msm8917()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -223,7 +223,7 @@ int platform_is_msm8917()
 	return ret;
 }
 
-int platform_is_qm215()
+bool platform_is_qm215()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -240,7 +240,7 @@ int platform_is_qm215()
 	return ret;
 }
 
-int platform_is_msm8937()
+bool platform_is_msm8937()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -259,7 +259,7 @@ int platform_is_msm8937()
 	return ret;
 }
 
-int platform_is_msm8952()
+bool platform_is_msm8952()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -277,7 +277,7 @@ int platform_is_msm8952()
 	return ret;
 }
 
-int platform_is_sdm429()
+bool platform_is_sdm429()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -295,7 +295,7 @@ int platform_is_sdm429()
 	return ret;
 }
 
-int platform_is_sdm439()
+bool platform_is_sdm439()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;
@@ -314,7 +314,7 @@ int platform_is_sdm439()
 }
 
 
-int platform_is_msm8956()
+bool platform_is_msm8956()
 {
 	uint32_t platform = board_platform_id();
 	uint32_t ret = 0;

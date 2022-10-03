@@ -5316,11 +5316,11 @@ void aboot_init(const struct app_descriptor *app)
 #endif
 
 normal_boot:
-	if (!boot_into_fastboot)
-	{
-		droidboot_show_dualboot_menu();
-		boot_linux_from_flash();
-	}
+	//if (!boot_into_fastboot)
+	//{
+	//	droidboot_show_dualboot_menu();
+	//	boot_linux_from_flash();
+	//}
 
 fastboot:
 	/* We are here means regular boot did not happen. Start fastboot. */

@@ -15,8 +15,7 @@ DTBS += \
 	$(LOCAL_DIR)/msm8953-xiaomi-vince.dtb \
 	$(LOCAL_DIR)/msm8953-meizu-m1721.dtb \
 	$(LOCAL_DIR)/msm8953-motorola-potter.dtb \
-	$(LOCAL_DIR)/msm8953-tenor-holland.dtb \
-	$(LOCAL_DIR)/msm8937-motorola-cedric.dtb
+	$(LOCAL_DIR)/msm8953-tenor-holland.dtb
 endif
 ifeq ($(PROJECT), msm8952-secondary)
 DTBS += \
@@ -30,5 +29,6 @@ DTBS += \
 endif
 ifeq ($(PROJECT), msm8937-secondary)
 DTBS += \
-	$(LOCAL_DIR)/msm8937-nokia-nd1.dtb
+	$(LOCAL_DIR)/msm8937-nokia-nd1.dtb \
+	$(LOCAL_DIR)/msm8937-motorola-cedric.dtb
 endif
