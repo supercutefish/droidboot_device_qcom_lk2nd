@@ -404,46 +404,6 @@ bool target_display_panel_node(char *pbuf, uint16_t buf_size)
 {
 	return gcdb_display_cmdline_arg(pbuf, buf_size);
 }
-
-void target_display_init(const char *panel_name)
-{
-        uint32_t panel_loop = 0;
-        uint32_t ret = 0;
-	uint32_t fb_addr = MIPI_FB_ADDR;
-	struct oem_panel_data oem;
-
-	set_panel_cmd_string(panel_name);
-	oem = mdss_dsi_get_oem_data();
-
-	if (!strcmp(oem.panel, NO_PANEL_CONFIG)
-		|| !strcmp(oem.panel, SIM_VIDEO_PANEL)
-		|| !strcmp(oem.panel, SIM_CMD_PANEL)
-		|| oem.skip) {
-		dprintf(INFO, "Selected panel: %s\nSkip panel configuration\n",
-			oem.panel);
-		return;
-	}
-
-	if (board_hardware_subtype() == HW_PLATFORM_SUBTYPE_QVGA)
-		fb_addr = MIPI_FB_ADDR_QVGA;
-
-	do {
-		target_force_cont_splash_disable(false);
-		ret = gcdb_display_init(oem.panel, MDP_REV_50, fb_addr);
-		if (!ret || ret == ERR_NOT_SUPPORTED) {
-			break;
-		} else {
-			target_force_cont_splash_disable(true);
-			msm_display_off();
-		}
-	} while (++panel_loop <= oem_panel_max_auto_detect_panels());
-
-	if (!oem.cont_splash) {
-		dprintf(INFO, "Forcing continuous splash disable\n");
-		target_force_cont_splash_disable(true);
-	}
-}
-
 void target_display_shutdown(void)
 {
 	gcdb_display_shutdown();

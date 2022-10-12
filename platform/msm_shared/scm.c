@@ -1066,8 +1066,9 @@ void scm_elexec_call(paddr_t kernel_entry, paddr_t dtb_offset)
 
 	/* Response Buffer = Null as no response expected */
 	dprintf(INFO, "Jumping to kernel via monitor\n");
+#ifdef pmic_reset_configure
 	pmic_reset_configure(0x1);
-
+#endif
 	if (!is_scm_armv8_support())
 	{
 		/* Command Buffer */

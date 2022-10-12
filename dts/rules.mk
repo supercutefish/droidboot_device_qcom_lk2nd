@@ -32,3 +32,7 @@ DTBS += \
 	$(LOCAL_DIR)/msm8937-nokia-nd1.dtb \
 	$(LOCAL_DIR)/msm8937-motorola-cedric.dtb
 endif
+ifeq ($(PROJECT), msm8226-secondary)
+DTBS += \
+	$(LOCAL_DIR)/msm8226-samsung-rev4-milletlte.dtb
+endif

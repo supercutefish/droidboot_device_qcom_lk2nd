@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: GPL-2.0-only
+
+/dts-v1/;
+
+/include/ "msm8226.dtsi"
+
+/ {
+	// This is used by the bootloader to find the correct DTB
+	qcom,msm-id = <0xC808FF01 4 0x10001>;
+	model = "Samsung Galaxy Tab 4 8.0 LTE Rev 4";
+	compatible = "qcom,msm8226-mtp", "qcom,msm8226", "qcom,mtp", "lk2nd,device";
+};

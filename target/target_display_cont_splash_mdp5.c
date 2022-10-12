@@ -92,7 +92,7 @@ static int mdp5_read_config(struct fbcon_config *fb)
 
 	return 0;
 }
-
+#ifndef target_display_init
 void target_display_init(const char *panel_name)
 {
 	dprintf(SPEW, "Panel: %s\n", panel_name);
@@ -103,3 +103,4 @@ void target_display_init(const char *panel_name)
 	// Setup framebuffer
 	fbcon_setup(&fb);
 }
+#endif
