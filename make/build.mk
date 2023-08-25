@@ -64,6 +64,8 @@ $(OUTBOOTIMG): $(OUTBIN) $(OUTZIMAGEDTB) $(OUTDTIMG)
 		--base=$(ANDROID_BOOT_BASE) \
 		--output=$@ \
 		--cmdline="$(ANDROID_BOOT_CMDLINE)"
+		--os_version="11.0.0"
+		--os_patch_level="2022-12"
 	$(NOECHO)echo -n SEANDROIDENFORCE >> $@
 
 include arch/$(ARCH)/compile.mk
