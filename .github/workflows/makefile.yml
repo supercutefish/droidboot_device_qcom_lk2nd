@@ -16,9 +16,10 @@ jobs:
 
 
     - name: Install dependencies
-      run: 
-         sudo apt install Gcc-arm-none-eabi python3 device-tree-compiler libfdt-dev
-         make TOOLCHAIN_PREFIX=arm-none-eabi- msm8937-secondary
+      run: sudo apt install gcc-arm-none-eabi python3 device-tree-compiler libfdt-dev
+  
+    - name: make
+      run: make TOOLCHAIN_PREFIX=arm-none-eabi- msm8937-secondary
 
 
     - name: Run distcheck
