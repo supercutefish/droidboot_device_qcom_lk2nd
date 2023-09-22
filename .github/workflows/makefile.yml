@@ -14,12 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-
     - name: Install dependencies
       run: sudo apt install gcc-arm-none-eabi python3 device-tree-compiler libfdt-dev git
    
     - name: git
-    - run: git clone https://github.com/supercutefish/droidboot_device_qcom_lk2nd.git .
+    - run: git clone -recusive https://github.com/supercutefish/droidboot_device_qcom_lk2nd.git .
    
     - name: make
       run: make TOOLCHAIN_PREFIX=arm-none-eabi- msm8937-secondary
