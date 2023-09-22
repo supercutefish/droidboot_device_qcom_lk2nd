@@ -1,0 +1,15 @@
+ 
+ 
+/dts-v1/;
+ 
+/include/ "msm8952.dtsi"
+ 
+/ {
+	model = "Qualcomm Technologies, Inc. SDA429 QRD BG WTP Overlay";
+	compatible = "motorola,harpia", "qcom,msm8916", "lk2nd,device";
+
+    qcom,msm-id= <0x1b5 0x00>;
+	qcom,board-id= <0x10b 0x08>;
+
+	lk2nd,uart = <1>;
+};
